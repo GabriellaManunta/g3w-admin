@@ -91,7 +91,7 @@ def install():
 @task
 def install_yarn_components():
     info("Installing Yarn/Bower components...")
-    sh('yarn --ignore-engines --ignore-scripts --prod')
+    sh('yarn install')
     sh('node -e "try { require(\'fs\').symlinkSync(require(\'path\').resolve(\'node_modules/@bower_components\'), '
        '\'g3w-admin/core/static/bower_components\', \'junction\') } catch (e) { }"')
     info("Yarn/Bower components installed.")
